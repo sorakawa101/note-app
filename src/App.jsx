@@ -11,7 +11,7 @@ function App() {
     const newNote = {
       id: 1,
       title: "new note",
-      content: "now note content",
+      content: "new note content",
       modDate: Date.now(),
     };
     setNotes([...notes, newNote]); // NOTE: 配列への追加方法（スプレッド構文）
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-        <Sidebar onAddNote={onAddNote}/>
+        <Sidebar onAddNote={onAddNote} notes={notes} />
         <Main />
     </div>
   )
