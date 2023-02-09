@@ -21,9 +21,15 @@ function App() {
     console.log("Added New Note!");
   };
 
+  const onDeleteNote = (id) => {
+    // NOTE: filterNotes note.id !== idの条件を満たす配列。つまり、削除ボタンを押したノートのidと異なるIDを持つノートのみ残った配列
+    const filterNotes = notes.filter((note) => note.id !== id);
+    setNotes(filterNotes);
+  };
+
   return (
     <div className="App">
-        <Sidebar onAddNote={onAddNote} notes={notes} />
+        <Sidebar onAddNote={onAddNote} notes={notes} onDeleteNote={onDeleteNote} />
         <Main />
     </div>
   )
