@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import uuid from 'react-uuid';
 import './App.css'
 import Main from './components/Main'
 import Sidebar from './components/Sidebar'
@@ -9,7 +10,7 @@ function App() {
 
   const onAddNote = () => {
     const newNote = {
-      id: 1,
+      id: uuid(),
       title: "new note",
       content: "new note content",
       modDate: Date.now(),
