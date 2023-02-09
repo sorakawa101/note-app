@@ -1,12 +1,12 @@
 import React from 'react'
 import "./Sidebar.css"
 
-function Sidebar() {
+function Sidebar({ onAddNote }) {
     return (
     <div className='app-sidebar'>
         <div className='app-sidebar-header'>
             <h1>Note</h1>
-            <button>Add</button>
+            <button onClick={onAddNote}>Add</button>
         </div>
         <div className="app-sidebar-notes">
             <div className="app-sidebar-note">
