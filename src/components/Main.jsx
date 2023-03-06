@@ -6,11 +6,11 @@ function Main() {
         <div className='app-main'>
             <div className="app-main-note-edit">
                 <input type="text" />
-                <textarea id="" placeholder='ノート内容を記入'></textarea>
+                <textarea id="" placeholder='Edit yout note contents.'></textarea>
             </div>
             <div className="app-main-note-preview">
                 <h1 className="preview-title">Title</h1>
-                <div className="markdown-preview">ノート内容</div>
+                <div className="markdown-preview">Note Contents</div>
             </div>
         </div>
     )
