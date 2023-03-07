@@ -13,7 +13,7 @@ function Sidebar({ onAddNote, notes, onDeleteNote, activeNote, setActiveNote }) 
             {notes.map((note) => (
                 // NOTE: map関数を適用した一番親要素にkeyを設定する必要がある
                 // NOTE: note.id === activeNote の条件が満たされたら、"active"をクラス名に追加
-                <div className={`app-sidebar-note  ${note.id === activeNote && "active"}`} key={note.id} onClick={() => setActiveNote(note.id)}>
+                <div className={`app-sidebar-note ${note.id === activeNote && "active"}`} key={note.id} onClick={() => setActiveNote(note.id)}>
                     <div className="sidebar-note-title">
                         <strong>{note.title}</strong>
                         {/* NOTE: () => onDeleteNote 引数を取るメソッドはアロー関数で書かないと、リロードで発火してしまう */}
@@ -25,7 +25,7 @@ function Sidebar({ onAddNote, notes, onDeleteNote, activeNote, setActiveNote }) 
                         hour: "2-digit",
                         minute: "2-digit",})}</small>
                 </div>
-            ))};
+            ))}
         </div>
     </div>
     )
