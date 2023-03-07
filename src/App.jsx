@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
 import './App.css'
 import Main from './components/Main'
@@ -6,8 +6,14 @@ import Sidebar from './components/Sidebar'
 
 function App() {
 
-  const [notes, setNotes] = useState([]);
+  // NOTE: JSON.parse() JSON形式をJS形式に変換
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes")) || []);
   const [activeNote, setActiveNote] = useState(false);
+
+  useEffect(() => {
+    // NOTE: JSON.stringify() JS形式をJSON形式に変換
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
   const onAddNote = () => {
     const newNote = {
